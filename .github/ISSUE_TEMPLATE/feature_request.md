@@ -1,11 +1,16 @@
 ---
-name: Feature request
-about: A Meta Ads capability you need
+name: Something is missing
+about: A Meta Ads capability or a use case that is not covered
+title: ''
 labels: enhancement
+assignees: ''
 ---
 
 **What you are trying to do**
+<!-- The marketing job, not the API call. -->
 
-**What is missing** — check `docs/LIMITATIONS.md` first
+**What is missing**
+<!-- Check docs/reference/what-it-cannot-do.md first — it may be a known limit. -->
 
-**Which client**
+**Is this a documentation gap or a connector gap?**
+<!-- Can the connector already do it and we just have not written it down? -->

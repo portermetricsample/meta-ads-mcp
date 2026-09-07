@@ -1,13 +1,19 @@
 ---
-name: Bug report
-about: Something is not working
-labels: bug
+name: Something in the docs is wrong
+about: A field, prompt, limit or error that does not behave as documented
+title: ''
+labels: documentation
+assignees: ''
 ---
 
-**What you asked**
+**Which file**
+<!-- e.g. docs/reference/all-fields.md -->
 
-**What happened** — paste the exact error
+**What the docs say**
 
-**Client** — Claude Desktop / Claude Code / ChatGPT / Cursor / Windsurf / n8n
+**What actually happened**
+<!-- The exact question you asked and the exact response. -->
 
-**Ad account currency** (COP, USD, …) — budget minimums differ by currency
+**Your setup**
+- AI client: <!-- Claude Desktop / Claude Code / ChatGPT / Cursor / Windsurf / n8n -->
+- Ad account currency: <!-- budget minimums and cost figures differ by currency -->
