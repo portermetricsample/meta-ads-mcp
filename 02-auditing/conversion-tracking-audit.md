@@ -49,8 +49,8 @@ custom conversions   <id> · <name> · <rule>
 **The sanity check**
 
 ```
-landing_page_views   3,208
-spend                9,540.00
+landing_page_views   6,410
+spend               18,250.00
 ```
 
 > [!NOTE]
