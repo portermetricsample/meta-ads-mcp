@@ -12,7 +12,6 @@ In your workflow, add **MCP Client Tool** (`@n8n/n8n-nodes-langchain.mcpClientTo
 | Server Transport | HTTP Streamable |
 | Authentication | None (Porter handles OAuth in-flow) |
 
-A ready-made node is in [`configs/n8n_workflow.json`](../configs/n8n_workflow.json) — import it.
 
 ## 3. Attach it to an agent
 

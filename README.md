@@ -43,7 +43,6 @@ Same URL for every client. You sign in with the Facebook account that already ha
 | Windsurf | [05-connect/windsurf.md](05-connect/windsurf.md) |
 | n8n | [05-connect/n8n.md](05-connect/n8n.md) |
 
-Paste-ready config files live in [`configs/`](configs/). Full walkthrough: [05-connect/](05-connect/).
 
 ## What it can read
 
@@ -88,7 +87,7 @@ Real Meta errors and subcodes with the fix: [06-reference/errors.md](06-referenc
 
 ## Found something wrong?
 
-Field descriptions drift and platforms change. If a prompt here fails, a field behaves differently than documented, or a limit we publish is no longer true — [open an issue](../../issues) with the question you asked and the response you got.
+Field descriptions drift and platforms change. If a prompt here fails, a field behaves differently than documented, or a limit we publish is no longer true — open an issue on this repository with the question you asked and the response you got.
 
 ## License
 
