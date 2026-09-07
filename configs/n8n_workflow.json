@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "sseEndpoint": "https://mcp.portermetrics.com/mcp",
+        "authentication": "none"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1,
+      "position": [0, 0],
+      "name": "Porter MCP — Meta Ads"
+    }
+  ],
+  "connections": {}
+}

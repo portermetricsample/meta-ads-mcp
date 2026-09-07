@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.portermetrics/meta-ads",
+  "description": "Meta Ads (Facebook & Instagram) MCP server — 500 metrics, 167 dimensions, full campaign CRUD. Hosted remote, OAuth, no API keys.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/portermetricsample/meta-ads-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.portermetrics.com/mcp"
+    }
+  ]
+}
