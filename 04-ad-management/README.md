@@ -13,15 +13,27 @@ Open this section when you want your assistant to build, edit, pause or restart 
 | [audiences-and-lookalikes.md](audiences-and-lookalikes.md) | You want a website or customer-list audience, or a lookalike built from one. |
 | [upload-creative.md](upload-creative.md) | You have an image or video to get into the account, from a link or from your own machine. |
 
-## How much of this has been verified
+## What has actually been run against a live ad account
 
-Being straight about it, because you are about to let an assistant change a live account:
+You are about to let an assistant change a live account, so here is the honest split. On 2026-09-07 a full chain was built in a real ad account, read back through Meta, and deleted — everything below marked **run** comes from that. Everything marked **not run** is grounded in the connector's own field catalog and action list, which is a weaker thing.
 
-- **Verified against a live ad account:** how the budget fields behave when you read them — the `0.0` at the level that does not hold the budget, and what "remaining" actually counts. That is why [edit-budgets-and-bids.md](edit-budgets-and-bids.md) is blunt about checking the level first.
-- **Verified against the live connector, but not by running the write:** what this connector can and cannot do — the bid strategy default, the Advantage+ Audience conflict, the single OR-group of interests, no post boosting, no asset deletion. Every one of those traces to [what it cannot do](../06-reference/what-it-cannot-do.md).
-- **Not tested end to end:** the write operations themselves — creating, editing, pausing, uploading and audience building. The prompts and field names are grounded, the exact responses your account returns are not.
+| Job | Run against a live account? | What that means for you |
+|---|---|---|
+| Create a campaign | **Yes** | Created paused, read back from Meta, budget and bid strategy confirmed on the object |
+| Create an ad set with targeting | **Yes** | Country, age range, Advantage+ Audience and platforms all round-tripped; the real parameter names are known |
+| Upload an image from a public URL | **Yes** | The response shape is documented because it was seen |
+| Create an ad | **Yes** | Confirmed which parameter names work and which are silently dropped |
+| Delete, and the cascade | **Yes** | Deleting the campaign removed its ad set and ad; the follow-up list came back empty |
+| Edit a budget on an existing object | **No** | Reading budgets was verified thoroughly; changing one was not |
+| Pause or activate anything | **No** | The action that carries a status change is known; its response is not |
+| Create a custom audience | **No** | The action and both seed types are real; no response has been seen |
+| Create a lookalike | **No** | Known to require a location; nothing beyond that has been observed |
+| Upload a video | **No** | Supported by the connector, never exercised here |
+| Upload a file from your own machine (base64) | **No** | Supported by the connector, never exercised here |
 
-Treat that last group as a reason to read every result back before you activate anything, rather than a reason to avoid the section.
+Separately, the connector's **limits** — the bid strategy default, the Advantage+ Audience conflict, the single OR-group of interests, no post boosting, no asset deletion, no dayparting — were verified against the live connector rather than by running a write. They all trace to [what it cannot do](../06-reference/what-it-cannot-do.md).
+
+Treat the "no" rows as a reason to read every result back before you activate anything, rather than a reason to avoid the section.
 
 ---
 

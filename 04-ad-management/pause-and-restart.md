@@ -2,6 +2,9 @@
 
 It is 6pm on Friday, the promo is over, and everything for that offer has to stop spending tonight.
 
+> [!IMPORTANT]
+> **This page has not been run end to end.** Nobody on this repo has pushed a status change through to a live ad account and read the result back. Everything below is grounded in the connector's own field catalog and action list — the field names, the action that carries a status change, and the scheduling limit are all real and checked. **What your account returns when it pauses something is not documented here, because it has not been seen.** Read every status back yourself and confirm from spend, not from the response.
+
 ## Ask this
 
 ```
@@ -11,17 +14,19 @@ Then pause all of them, starting at the campaign level,
 and show me the status of each one after the change.
 ```
 
+Pausing is not its own action. `facebook_ads.campaign_update` is documented as changing name, status, budget and bid strategy. `facebook_ads.adset_update` and `facebook_ads.ad_update` exist, but the catalog does not spell out what they accept, and none of the three was run while writing this page.
+
 ## What comes back
 
-One row per object, at all three levels, with the status before and after. Names and ids below are placeholders.
+Expect one row per object, at whichever levels you asked for, carrying its status. **The table below is a layout, not a result** — every value in it is a placeholder, and no run has confirmed the column set your account will return.
 
 | Level | Name | Id | Before | After |
 |---|---|---|---|---|
-| campaign | `<promo campaign>` | 120250000000000011 | ACTIVE | PAUSED |
-| ad set | `<promo ad set A>` | 120250000000000012 | ACTIVE | PAUSED |
-| ad set | `<promo ad set B>` | 120250000000000013 | PAUSED | PAUSED |
-| ad | `<promo ad 1>` | 120250000000000014 | ACTIVE | PAUSED |
-| ad | `<promo ad 2>` | 120250000000000015 | ACTIVE | PAUSED |
+| campaign | `<promo campaign>` | `<campaign id>` | ACTIVE | PAUSED |
+| ad set | `<promo ad set A>` | `<ad set id>` | ACTIVE | PAUSED |
+| ad set | `<promo ad set B>` | `<ad set id>` | PAUSED | PAUSED |
+| ad | `<promo ad 1>` | `<ad id>` | ACTIVE | PAUSED |
+| ad | `<promo ad 2>` | `<ad id>` | ACTIVE | PAUSED |
 
 ## How to read it
 
@@ -29,17 +34,22 @@ Ask for all three levels in one answer. Each level carries its own status field,
 
 Pause the ad level instead of the campaign when only one creative is the problem and the rest of the ad set should keep running.
 
-To restart, say the same sentence with "activate" in place of "pause", and be explicit about the level you mean. Each object keeps its own status, so bringing a campaign back does not decide anything for an ad set that was paused separately.
+To restart, say the same sentence with "activate" in place of "pause", and be explicit about the level you mean. Each object holds its own status, so bringing a campaign back does not decide anything for an ad set that was paused separately.
 
-Use the "before" column as your record of what to restore. Take that list before you pause anything, not after.
+Use the "before" column as your record of what to restore. Take that list **before** you pause anything, not after.
 
-## The trap
+The listing actions — `facebook_ads.campaign_list`, `adset_list`, `ad_list` — can filter on `effective_status`, which is the faster way to ask "what is actually live right now" than pulling everything and reading it.
+
+## The traps
 
 > [!WARNING]
-> **The status you set and the status that decides delivery are two different columns.** The catalog carries `facebook_ads_campaign_configured_status` — what someone set on the object — separately from `facebook_ads_status`, `facebook_ads_adset_status` and `facebook_ads_ad_status`. An ad can carry ACTIVE as its own configured status while nothing above it is running. Ask for all three levels together, as in the table above, and treat "it says ACTIVE" as an answer about one object only — never as proof that it is spending.
+> **Four separate status fields exist and this page does not claim to know how they differ.** The catalog carries `facebook_ads_campaign_configured_status` alongside `facebook_ads_status`, `facebook_ads_adset_status` and `facebook_ads_ad_status`. Which one governs delivery was not tested — ask for all of them and compare rather than trusting one.
+
+> [!WARNING]
+> **Do not reach for delete when you mean pause.** Deleting a campaign takes its ad sets and ads with it — that cascade was confirmed on a live account, and afterwards the list came back empty. Pausing is reversible; deleting is not.
 
 > [!NOTE]
-> You cannot schedule the stop. Dayparting and ad scheduling are not parameters on this connector: ads deliver continuously between their start and end time, so a promo that must end tonight ends when someone actually pauses it. Set an end time when you build the ad set, or put the pause in someone's calendar.
+> **You cannot schedule the stop.** Dayparting and ad scheduling are not parameters on this connector: ads deliver continuously between their start and end time, so a promo that must end tonight ends when someone actually pauses it. Set an end time when you build the ad set, or put the pause in someone's calendar.
 
 ## Go deeper
 

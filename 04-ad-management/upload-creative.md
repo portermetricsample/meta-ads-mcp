@@ -2,47 +2,53 @@
 
 The designer sent three new statics and a 15-second cut this morning, and they need to be in the account before the ad can be built.
 
+> [!NOTE]
+> **What on this page has actually been run.** Uploading an **image from a public URL** was executed against a live ad account on 2026-09-07, and the response shape below is the one that came back. **Video upload and uploading a file from your own machine were not run.** They are listed as supported by the connector, but nobody on this repo has seen their responses — read your own result back before you build an ad on top of one.
+
 ## Ask this
 
 ```
-Upload these to my Meta ad account and give me back the id or hash for each:
-- the image at <public image URL>
-- the video file at <path to the file on my machine>
-Then show me the account's uploaded images and videos so I can confirm they landed.
-```
-
-## What comes back
-
-One line per asset, carrying the reference you will reuse. Ids below are made up.
+Upload the image at <public image URL> to my Meta ad account
+and give me back the hash it returns.
 
 ```
-image   hash 4f2c…            uploaded
-video   id 46200000000000     uploaded
+
+## What comes back — image from a URL, verified
+
+The upload action is `facebook_ads.image_upload`. It answers with an `images` object, and **the key inside it is a file name the connector derives from the last segment of the URL you gave it**:
+
+```
+images
+  └─ <file name derived from your URL>
+       └─ hash   <the reference you reuse>
 ```
 
-| Asset | Type | Reference to reuse |
-|---|---|---|
-| `<image file name>` | image | image hash |
-| `<video file name>` | video | video id |
+In the run behind this page the URL ended in `.../1200/628` and the key came back as `628.jpg`. Your URL will produce a different key.
+
+> [!WARNING]
+> **Do not hardcode that key, and do not let a script look for the file name you think you uploaded.** The connector invents it from the URL, so a URL with no file name in it still produces one. Read the **first value inside `images`** and take its `hash`. Anything that reaches for a fixed key breaks the moment the URL shape changes.
 
 ## How to read it
 
-Keep the hash (images) or the id (videos) that comes back. That reference is what the ad build uses, and asking for the account's uploaded assets later gets it back for you.
+Keep the hash. That is the reference the ad build uses, and nothing lists the account's uploaded assets afterwards, so keep it.
 
-Two sources work: a public URL, or the file's own bytes sent as base64 from your machine. The bytes route is what lets an assistant take a file off your desktop into the account with no manual upload step in between. If you pass a URL, it has to be one that returns the file itself — a share link from a cloud drive returns a web page, and a web page is not an image.
+**Two upload routes exist.** A public URL, or the file's own bytes sent as `image_base64` / `video_base64` from your machine — the base64 route is what lets an assistant take a file off your desktop into the account with no manual step in between. **Only the URL route for images has been run here.**
 
-Ask for the account's uploaded images and videos as a second step and check yours is in the list before you build an ad from it.
+If you pass a URL it has to be one that returns the file itself. A share link from a cloud drive returns a web page, and a web page is not an image.
 
-## The trap
+
+## The traps
 
 > [!WARNING]
 > **Uploaded images and videos cannot be deleted through this connector, so every mistake is permanent.** There is no delete for assets — removing one is an Ads Manager job — even though campaigns, ad sets and ads can all be deleted here. Name files properly on the way in, upload the final cut rather than the review copy, and expect the asset list to only ever grow.
 
+> [!WARNING]
+> **Building the ad afterwards has its own naming traps, and these were hit in the live run.** The headline parameter is **`headline`** — pass `title` and it is silently dropped, so the ad is created without the headline you wrote. **`link` is required** even when the destination is inside an app. The button is a restricted list: **`LEARN_MORE` works, `GET_STARTED` is rejected**. And the ad needs a `page_id`, which you get from `facebook_ads.page_list`.
+
 ## Go deeper
 
-- Show me every image and video already uploaded to this account, newest first.
-- Build a paused ad from the image I just uploaded, with headline `<headline>` and a Shop Now button.
-- Upload every file in this folder and give me a table of file name against its hash or id.
+- Build a paused ad from the image I just uploaded, with headline `<headline>` and a Learn More button, pointing at `<your URL>`.
+- Upload each of these URLs and give me a table of the returned key against its hash.
 - Show me my current ads with a preview link for each, so I can see how the new creative will look.
 - Which of my running ads use this same image, so I know what I am about to replace?
 

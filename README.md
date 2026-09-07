@@ -29,6 +29,7 @@ Pick the job you actually have today. Every file inside is one job: the prompt t
 | **[02 · Auditing](02-auditing/)** | Something is wrong, or an account you did not build just landed on your desk — where the money goes, what is working, who converts, whether the pixel is really firing, why delivery stopped. |
 | **[03 · Research](03-research/)** | Reading ads you do not own. Any brand's live Meta ads by name, from the public Ad Library — no login, no partner access, nothing for them to approve. |
 | **[04 · Ad management](04-ad-management/)** | Changing things instead of reading them — launch a campaign, move budgets and bids, pause and restart, build audiences and lookalikes, upload creative. Writes go to your account, created paused. |
+| **[Skills](skills/)** | Ready-made instructions your assistant loads before it starts, so the traps on these pages are avoided by default rather than remembered — launching a campaign, the weekly report, the conversion audit, the competitor teardown. |
 
 ## Connect it to your assistant
 
