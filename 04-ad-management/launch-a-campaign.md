@@ -39,7 +39,9 @@ Some objectives are simply not available to build here: app-install optimization
 ## The trap
 
 > [!WARNING]
-> **Always name the bid strategy yourself.** The connector accepts `LOWEST_COST_WITHOUT_CAP`, `COST_CAP`, `BID_CAP` and `MINIMUM_ROAS`. What it picks when you say nothing is not documented, and a cap strategy without a bid amount produces a campaign that looks correct and cannot deliver. Say `LOWEST_COST_WITHOUT_CAP` unless you specifically want a cap.
+> **The bid strategy you get by default is one you are not allowed to ask for.** Create a campaign without naming a strategy and Meta stores `LOWEST_COST_WITH_BID_CAP` — verified by creating a real campaign and reading it back. That is a bid-cap strategy, and it needs a bid amount nobody prompted you for; without one the campaign looks correct and cannot deliver.
+>
+> It is not even in the list you can choose from — that offers `LOWEST_COST_WITHOUT_CAP`, `COST_CAP`, `BID_CAP` and `MINIMUM_ROAS`. So the fix is not to avoid it, it is to **always say `LOWEST_COST_WITHOUT_CAP` explicitly** unless you want a cap.
 
 > [!WARNING]
 

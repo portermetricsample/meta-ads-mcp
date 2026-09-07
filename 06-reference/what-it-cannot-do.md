@@ -2,6 +2,9 @@
 
 Verified against the live connector. We publish this because knowing what a tool cannot do saves more time than another feature list.
 
+> [!WARNING]
+> **Bid strategy defaults to `LOWEST_COST_WITH_BID_CAP`** — confirmed by creating a campaign with no bid strategy and reading it back from Meta. It requires a bid amount to deliver, and it is not offered in the values you may set. Always pass `LOWEST_COST_WITHOUT_CAP` explicitly. Full explanation: [launch a campaign](../04-ad-management/launch-a-campaign.md).
+
 ## Not exposed by this connector
 
 | Capability | Status | Workaround |
