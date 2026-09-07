@@ -86,6 +86,10 @@ Yes, from Meta's public Ad Library — you get the ads, not their spend or resul
 ### Something came back as an error. Where do I look?
 Real Meta errors and subcodes with the fix: [06-reference/errors.md](06-reference/errors.md).
 
+## Found something wrong?
+
+Field descriptions drift and platforms change. If a prompt here fails, a field behaves differently than documented, or a limit we publish is no longer true — [open an issue](../../issues) with the question you asked and the response you got.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
