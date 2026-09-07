@@ -9,7 +9,6 @@ Set `targeting_advantage_audience` explicitly — `0` for manual targeting, `1` 
 **If you set `targeting_age_max` below 65, it must be `0`** — `1` with an age cap triggers subcode 1870189, which cannot be fixed after creation.
 
 ## `Bid Amount Required For The Bid Strategy Provided` (subcode 1815857)
-The parent campaign is on `LOWEST_COST_WITH_BID_CAP`. Either supply `bid_value`, or set the campaign to `LOWEST_COST_WITHOUT_CAP`.
 
 ## `Performance goal isn't available` (subcode 2490408)
 The `optimization_goal` is not valid for the campaign objective. `OUTCOME_TRAFFIC` accepts `LINK_CLICKS`, `LANDING_PAGE_VIEWS`, `IMPRESSIONS`, `REACH`, `POST_ENGAGEMENT`, `OFFSITE_CONVERSIONS`, `THRUPLAY`.
@@ -33,7 +32,9 @@ The seed audience is likely below Meta's minimum size (~100 people). Grow the se
 A Google Drive or Dropbox **share** link returns HTML, not media. Use a direct-download URL, or pass the bytes as `image_base64` / `video_base64`.
 
 ## `Unknown field(s) absent from every loaded schema`
-Field names are namespaced. Use `list_fields(connector="facebook-ads")` — it is `facebook_ads_impressions`, not `facebook_ads_impressions`.
+Most field names are namespaced: it is `facebook_ads_impressions`, not `impressions`.
+
+**But there is an exception, and the error message names it for you.** A few fields are Porter *blend* fields shared across connectors, and those are written bare. Asking for `facebook_ads_landing_page_view` fails; the field is `landing_page_views`, with no prefix. Read the suggestion in the error — it tells you which form to use.
 
 ## Query returns 0 rows but the account has spend
 Try the widest legal window before concluding the account is empty, and drop dimensions to test the aggregate. A `data_freshness` block with `row_count: 0` means *unknown*, not *zero*.

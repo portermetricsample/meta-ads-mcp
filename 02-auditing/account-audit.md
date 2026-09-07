@@ -27,24 +27,27 @@ Three tables and a list. Numbers below are illustrative only — the shape is wh
 **Account total**
 
 ```
-spend            48,300
-impressions   1,942,000
-reach           612,400
-frequency          3.17
-link clicks      21,880
-cost per link click 2.21
+spend               48,300.00
+impressions      1,942,000
+reach              612,400
+frequency             3.17
+link clicks         21,880
+cost per link click   2.207495
 ```
 
-**By campaign** — one row per campaign, including campaigns that no longer exist
+**By campaign** — one row per campaign
 
 | Campaign | Objective | Status | Spend | Impressions | Link clicks | Cost / link click |
 |---|---|---|---|---|---|---|
-| Campaign A | OUTCOME_SALES | ACTIVE | 21,400 | 780,000 | 9,900 | 2.16 |
-| Campaign B | OUTCOME_TRAFFIC | ACTIVE | 14,600 | 640,000 | 8,100 | 1.80 |
-| Campaign C | OUTCOME_LEADS | PAUSED | 8,900 | 402,000 | 3,600 | 2.47 |
-| Campaign D | OUTCOME_AWARENESS | PAUSED | 3,400 | 120,000 | 280 | 12.14 |
+| Campaign A | OUTCOME_SALES | ACTIVE | 21,400.00 | 780,000 | 9,900 | 2.161616 |
+| Campaign B | OUTCOME_TRAFFIC | ACTIVE | 14,600.00 | 640,000 | 8,100 | 1.802469 |
+| Campaign C | OUTCOME_LEADS | PAUSED | 8,900.00 | 402,000 | 3,600 | 2.472222 |
+| Campaign D | OUTCOME_AWARENESS | PAUSED | 3,400.00 | 120,000 | 280 | 12.142857 |
 
 **By ad set** — same columns, one row per ad set, nested under the top five campaigns.
+
+> [!NOTE]
+> Spend arrives with two decimal places at campaign level and six once you split it by a breakdown such as placement or device, which is why a breakdown table will not tie back to the campaign total once you round it. That is explained where it bites, in [audience-audit.md](audience-audit.md).
 
 ## How to read it
 
@@ -64,10 +67,12 @@ Anything you cannot explain at campaign level, ask for again at ad set and then 
 ## Go deeper
 
 - Show me the same 90 days month by month so I can see the trend.
-- Which campaigns are set up with a lifetime budget instead of a daily budget?
-- How much daily budget is currently assigned across all active ad sets?
+- Show me daily spend by campaign so I can see which ones are still live and which stopped.
 - Show me every ad set whose targeting age range and countries I can read back, so I can see what was actually set up.
+- Break the account's spend down by placement and by country, so I can see where the money physically goes.
 - Compare this account's last 90 days against the 90 days before that.
+
+For "how is this account pacing" or "how much budget is left", do not read the budget fields — they answer a different question than the one you are asking. See [budget pacing](../01-reporting/budget-pacing.md).
 
 ## Fields this uses
 
@@ -78,7 +83,9 @@ Anything you cannot explain at campaign level, ask for again at ad set and then 
 - [`facebook_ads_inline_link_clicks`](../06-reference/all-fields.md)
 - [`facebook_ads_cost_per_inline_link_click`](../06-reference/all-fields.md)
 - [`facebook_ads_campaign_name`](../06-reference/all-fields.md) · [`facebook_ads_adset_name`](../06-reference/all-fields.md) · [`facebook_ads_objective`](../06-reference/all-fields.md) · [`facebook_ads_status`](../06-reference/all-fields.md)
-- [`facebook_ads_campaign_daily_budget`](../06-reference/all-fields.md) · [`facebook_ads_campaign_lifetime_budget`](../06-reference/all-fields.md) · [`facebook_ads_adsetdaily_budget`](../06-reference/all-fields.md)
+- [`facebook_ads_account_name`](../06-reference/all-fields.md) · [`facebook_ads_account_currency`](../06-reference/all-fields.md) · [`facebook_ads_account_status`](../06-reference/all-fields.md)
+
+Budget fields exist and are listed in the reference, but this audit does not use them. Read [budget pacing](../01-reporting/budget-pacing.md) before you do.
 
 ---
 

@@ -6,24 +6,25 @@ The client does not run "a Meta account", they run paid media — and the only q
 
 ```
 Compare my Meta Ads, Google Ads and TikTok Ads for the last 30 days:
-spend, impressions and clicks per platform, plus cost per click.
+spend, impressions, clicks and landing page views per platform,
+plus cost per click.
 Then show me the same three platforms for the previous 30 days.
 ```
 
-Ask it in one message. It is one call across the connected accounts, not three questions stitched together afterwards.
+Ask it in one message rather than one platform at a time. The columns come back aligned to the same period, so you are reading a table instead of reconciling three exports by hand.
 
 ## What comes back
 
 One row per platform, same columns, same period.
 
-| Platform | Spend | Impressions | Clicks | Cost / click |
-|---|---|---|---|---|
-| Google Ads | 118,400 | 15,210,000 | 194,300 | 0.61 |
-| Meta Ads | 92,700 | 1,604,000 | 98,500 | 0.94 |
-| TikTok Ads | 54,900 | 6,712,000 | 218,400 | 0.25 |
+| Platform | Spend | Impressions | Clicks | Landing page views | Cost / click |
+|---|---|---|---|---|---|
+| Google Ads | 118,400.00 | 15,210,000 | 194,300 | 121,400 | 0.61 |
+| Meta Ads | 92,700.00 | 1,604,000 | 98,500 | 58,900 | 0.94 |
+| TikTok Ads | 54,900.00 | 6,712,000 | 218,400 | 74,200 | 0.25 |
 
 > [!NOTE]
-> Illustration only. The shape — one row per platform, aligned columns, one query — is real; the numbers are not anyone's.
+> Invented figures. The shape — one row per platform, aligned columns, one question — is real; the numbers are not anyone's.
 
 ## How to read it
 
@@ -31,14 +32,24 @@ The comparison is only honest for the metrics every platform counts the same way
 
 Read cost per click as the price of traffic, not the quality of it. The cheapest clicks in the table are usually the least qualified ones; that is a reason to check what happened after the click, not a reason to move budget.
 
+**Cross-platform fields are named differently from Meta-only fields, and this catches people out.** Everything that belongs to one connector is prefixed — `facebook_ads_spend`, `facebook_ads_clicks`. The cross-platform fields that sit above all your connectors have **no prefix at all**. Landing page views is one of them: the field is `landing_page_views`, and asking for `facebook_ads_landing_page_view` is a hard error, not an empty column. If a field is meant to line up three platforms in one row, try it without the prefix first.
+
 If the accounts bill in different currencies, a spend column that mixes them is meaningless. Ask for spend converted to one currency, or ask for each account's currency alongside the spend so you can see the mix.
 
-Anything past three years is gone — Meta keeps roughly three years of history, so a five-year comparison will fail rather than come back short.
+Meta's history is capped at 37 months by Meta's own API. A comparison reaching further back than that has nothing to reach for.
+
+Meta's cost columns are precise pass-throughs and come back with six decimal places — round them for the client, not before you compare them. [The weekly report page](weekly-and-monthly-report.md) has the detail.
 
 ## The trap
 
 > [!WARNING]
-> **The generic cross-platform "conversions" column returns zero for Meta.** Put it in a three-platform table and Meta looks like it converted nothing, next to Google and TikTok showing real numbers — the most expensive wrong conclusion in this whole repo. Ask for Meta's conversions by their own names (purchases, leads, messaging conversations) as a separate step, and never let a blended conversions column decide a budget.
+> **The cross-platform "conversions" column returns zero for Meta.**
+>
+> Put it in a three-platform table and Meta looks like it converted nothing, sitting next to Google and TikTok showing real numbers. It is the most expensive wrong conclusion in this repository: a channel gets defunded because a column was blank.
+>
+> Meta's conversions have to be asked for by their own prefixed names — `facebook_ads_offsite_conversion_fb_pixel_purchase`, `facebook_ads_offsite_conversion_fb_pixel_lead` — as a separate step, and stitched into the table by hand.
+>
+> Never let a blended conversions column decide a budget. Spend, impressions, clicks and landing page views are what genuinely line up across three platforms; conversions are not, and pretending otherwise is how the wrong channel gets cut.
 
 ## Go deeper
 
@@ -57,6 +68,7 @@ Anything past three years is gone — Meta keeps roughly three years of history,
 - [`facebook_ads_spend_usd`](../06-reference/all-fields.md) — converted spend, for mixed-currency accounts
 - [`facebook_ads_account_currency`](../06-reference/all-fields.md) · [`facebook_ads_account_name`](../06-reference/all-fields.md)
 - [`facebook_ads_offsite_conversion_fb_pixel_purchase`](../06-reference/all-fields.md) — Meta conversions, named explicitly
+- `landing_page_views` — cross-platform, **no connector prefix**
 
 ---
 

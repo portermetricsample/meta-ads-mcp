@@ -1,6 +1,9 @@
 # Available fields — Meta Ads
 
-**500 metrics and 167 dimensions.** Field names are namespaced: `facebook_ads_<name>`. Get the live list with `list_fields(connector="facebook-ads")`.
+**500 metrics and 167 dimensions.** Field names are namespaced: `facebook_ads_<name>`.
+
+> [!WARNING]
+> **A few fields break that rule and are written bare.** These are Porter *blend* fields, shared across connectors. `landing_page_views` is one — `facebook_ads_landing_page_view` is rejected outright. When a field name fails, read the error: it names the form that works. Get the live list with `list_fields(connector="facebook-ads")`.
 
 ## Delivery
 `impressions` · `reach` · `frequency` · `spend` · `social_spend` · `full_view_impressions` · `full_view_reach`

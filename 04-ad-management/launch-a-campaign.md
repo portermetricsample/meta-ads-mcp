@@ -6,17 +6,17 @@ The creative is approved, the client wants it live tomorrow, and you do not want
 
 ```
 Build me a paused Traffic campaign in my Meta ad account.
-Ad set: Colombia only, ages 25 to 54, optimizing for link clicks, 
-daily budget 50,000 in account currency, Advantage+ Audience turned off.
 Use the lowest cost strategy with no bid cap.
-Ad: use the image at <public image URL>, headline "<headline>", 
+Ad set: Colombia only, ages 25 to 54, optimizing for link clicks,
+daily budget 50000 in account currency, Advantage+ Audience turned off.
+Ad: use the image at <public image URL>, headline "<headline>",
 body "<body text>", a Learn More button, landing page <your URL>.
 Leave everything paused and show me the ids you created.
 ```
 
 ## What comes back
 
-Three ids, one per level, all paused. Ids below are made up for illustration.
+Three ids, one per level. Ids below are made up for illustration.
 
 ```
 campaign  120250000000000001   PAUSED
@@ -30,23 +30,29 @@ Three ids means all three levels were built and linked. If you only get one or t
 
 The ad set line is your receipt on targeting: country, age range, whether Advantage+ Audience was left off, and what the ad set is optimizing for. Read it against the brief before you activate anything.
 
-Ask for a read-back — "show me this campaign, ad set and ad as they are stored now" — and compare body, headline, image and button to what you sent. Everything is paused, so a wrong ad costs nothing until you say go.
+Ask for a read-back — "show me this campaign, ad set and ad as they are stored now" — and compare body, headline, image and button to what you sent.
+
+Say "leave everything paused" in the request and check the status you get back before you go any further. Paused is the state you want while you review; activating is a separate, deliberate instruction.
+
+Some objectives are simply not available to build here: app-install optimization, the messaging `CONVERSATIONS` goal, and catalog or Advantage+ Shopping campaigns. Check [what it cannot do](../06-reference/what-it-cannot-do.md) before you promise a client a campaign type. Targeting has its own limits — one OR-group of interests, no exclusions, no language targeting — set out in [audiences and lookalikes](audiences-and-lookalikes.md).
 
 ## The trap
 
 > [!WARNING]
-> If you do not name a bid strategy, the campaign is created on `LOWEST_COST_WITH_BID_CAP` — a bid cap strategy that needs a bid amount to work. Without that amount the campaign is built, looks correct, and **cannot deliver a single impression** when you activate it. Say "lowest cost, no bid cap" in the prompt, or supply a bid amount on purpose.
+> **Always name the bid strategy yourself.** The connector accepts `LOWEST_COST_WITHOUT_CAP`, `COST_CAP`, `BID_CAP` and `MINIMUM_ROAS`. What it picks when you say nothing is not documented, and a cap strategy without a bid amount produces a campaign that looks correct and cannot deliver. Say `LOWEST_COST_WITHOUT_CAP` unless you specifically want a cap.
+
+> [!WARNING]
 
 > [!NOTE]
-> A second one that bites at creation: if you cap the age below 65, Advantage+ Audience must be off. Turning it on with an age cap is rejected, and on some accounts that combination cannot be repaired after the ad set exists — you rebuild the ad set.
+> A second one that bites at creation: if you cap the age below 65, Advantage+ Audience must be off. Turning it on alongside an age cap is rejected, with error subcode 1870189.
 
 ## Go deeper
 
 - Read this campaign, ad set and ad back and confirm the targeting and creative match the brief.
-- Search for interests related to `<topic>` before I decide whether to narrow this ad set.
 - Look up the geolocation code for `<city or region>` so I can target it instead of the whole country.
 - Build a second ad set under the same campaign, identical except for the age range, so I can compare.
 - Which performance goals are valid for this campaign objective?
+- Show me the preview links for this ad so I can see it before it runs.
 
 ## Fields this uses
 
@@ -54,7 +60,7 @@ Ask for a read-back — "show me this campaign, ad set and ad as they are stored
 - [`facebook_ads_objective`](../06-reference/all-fields.md) · [`facebook_ads_buying_type`](../06-reference/all-fields.md)
 - [`facebook_ads_campaign_id`](../06-reference/all-fields.md) · [`facebook_ads_adset_id`](../06-reference/all-fields.md) · [`facebook_ads_ad_id`](../06-reference/all-fields.md)
 - [`facebook_ads_adsettargeting_age_min`](../06-reference/all-fields.md) · [`facebook_ads_adsettargeting_age_max`](../06-reference/all-fields.md) · [`facebook_ads_adsettargeting_geo_location_countries`](../06-reference/all-fields.md)
-- [`facebook_ads_adsetdaily_budget`](../06-reference/all-fields.md) · [`facebook_ads_bidamount`](../06-reference/all-fields.md)
+- [`facebook_ads_adsetdaily_budget`](../06-reference/all-fields.md) · [`facebook_ads_bidamount`](../06-reference/all-fields.md) — and see [change budgets and bids](edit-budgets-and-bids.md) for which level a budget lands on
 
 ---
 

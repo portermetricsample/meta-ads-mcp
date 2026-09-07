@@ -13,11 +13,11 @@ Then show me the account's uploaded images and videos so I can confirm they land
 
 ## What comes back
 
-One line per asset. A video also reports its length and both processing stages. Ids below are made up.
+One line per asset, carrying the reference you will reuse. Ids below are made up.
 
 ```
 image   hash 4f2c…            uploaded
-video   id 46200000000000     length 4.083s, uploading complete, processing complete
+video   id 46200000000000     uploaded
 ```
 
 | Asset | Type | Reference to reuse |
@@ -27,19 +27,16 @@ video   id 46200000000000     length 4.083s, uploading complete, processing comp
 
 ## How to read it
 
-Two stages matter for video: **uploading** moves the bytes, **processing** makes the file usable in an ad. Both must say complete. A video that finished uploading but is still processing will fail when you try to build an ad from it — wait and ask again.
+Keep the hash (images) or the id (videos) that comes back. That reference is what the ad build uses, and asking for the account's uploaded assets later gets it back for you.
 
-Source can be a public URL or the raw bytes of a file sitting on your machine. The bytes path is what lets an assistant take a file from your desktop into the account with no manual upload step in between.
+Two sources work: a public URL, or the file's own bytes sent as base64 from your machine. The bytes route is what lets an assistant take a file off your desktop into the account with no manual upload step in between. If you pass a URL, it has to be one that returns the file itself — a share link from a cloud drive returns a web page, and a web page is not an image.
 
-Keep the hash (images) or id (videos) that comes back. That reference is what the ad build uses, and asking for the account's uploaded assets later gets it back for you.
-
-> [!NOTE]
-> Uploaded images and videos **cannot be deleted** through this connector. Removing an asset from the account is an Ads Manager job. Name files carefully, because clutter accumulates.
+Ask for the account's uploaded images and videos as a second step and check yours is in the list before you build an ad from it.
 
 ## The trap
 
 > [!WARNING]
-> **A Google Drive or Dropbox share link is not a file link.** It serves a web page, so the upload receives HTML instead of an image or a video and fails with a message about the URL serving a web page. Use a direct-download link that returns the file itself, or hand over the local file and let the bytes be uploaded instead. This is the single most common failure here, and the error text does not look like it is about the link.
+> **Uploaded images and videos cannot be deleted through this connector, so every mistake is permanent.** There is no delete for assets — removing one is an Ads Manager job — even though campaigns, ad sets and ads can all be deleted here. Name files properly on the way in, upload the final cut rather than the review copy, and expect the asset list to only ever grow.
 
 ## Go deeper
 
@@ -55,6 +52,8 @@ Keep the hash (images) or id (videos) that comes back. That reference is what th
 - [`facebook_ads_video_asset`](../06-reference/all-fields.md) · [`facebook_ads_video_asset_thumbnail_url`](../06-reference/all-fields.md)
 - [`facebook_ads_ad_format_asset`](../06-reference/all-fields.md) · [`facebook_ads_call_to_action_asset_name`](../06-reference/all-fields.md) · [`facebook_ads_link_url_asset_website_url`](../06-reference/all-fields.md)
 - [`facebook_ads_ad_mobile_feed_preview_url`](../06-reference/all-fields.md) · [`facebook_ads_ad_instagram_preview_url`](../06-reference/all-fields.md)
+
+An ad must be built from uploaded assets. Promoting a post that already exists on the page is not available here — see [what it cannot do](../06-reference/what-it-cannot-do.md).
 
 ---
 

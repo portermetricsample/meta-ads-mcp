@@ -12,7 +12,8 @@ Verified against the live connector. We publish this because knowing what a tool
 | Messaging optimization (`CONVERSATIONS` goal) | ❌ | Point at WhatsApp/Messenger optimizing for `LINK_CLICKS` |
 | Boost an existing organic post | ❌ no `object_story_id` | Build the ad from assets |
 | Custom attribution window (`attribution_spec`) | ❌ | Ad sets use the account default |
-| Catalog / Dynamic Product Ads / Advantage+ Shopping | ❌ | Ads Manager |
+| Catalog / Dynamic Product Ads | ❌ | Ads Manager |
+| Advantage+ **Shopping** | ❌ | Removed by Meta from the API in v24 (subcode 2490568) — Ads Manager only. Not a connector gap. Advantage+ **App** still works, via `smart_promotion_type`. |
 | App-install optimization goal | ❌ | Choose another objective |
 | `facebook_ads_spend_cap`, `target_roas` | ❌ | Use `bid_strategy: MINIMUM_ROAS` + `bid_value` |
 | Financial services special ad category | ❌ not in enum | Ads Manager |
@@ -24,11 +25,10 @@ Placements · custom audiences (customer-file **and** website/pixel-rule) · loo
 
 ## Known gotchas
 
-**Bid strategy defaults to `LOWEST_COST_WITH_BID_CAP`.** That requires a `bid_amount`; without one the campaign cannot deliver. Pass `bid_strategy: "LOWEST_COST_WITHOUT_CAP"` explicitly unless you want a bid cap.
 
 **`facebook_ads_amount_spent` is an account-level lifetime value.** For period spend use **`facebook_ads_spend`**.
 
-**`facebook_ads_conversions_all` counts every action**, including page engagements and video views — not business conversions. For those use the specific fields (`facebook_ads_purchase`, `facebook_ads_lead`).
+**`facebook_ads_conversions_all` counts every action**, including page engagements and video views — not business conversions. For those use the specific fields (`facebook_ads_offsite_conversion_fb_pixel_purchase`, `facebook_ads_offsite_conversion_fb_pixel_lead`).
 
 **Blended `conversions` does not cover Meta.** In a cross-platform query it returns 0 for Meta Ads. Use the Meta-native conversion fields.
 

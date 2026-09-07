@@ -6,11 +6,11 @@ Retargeting has been running on one stale list for months, and you want a fresh 
 
 ```
 In my Meta ad account, do two things.
-1. Create a website custom audience called "<audience name>" from my pixel: 
+1. Create a website custom audience called "<audience name>" from my pixel:
    people who visited any page containing "<url fragment>" in the last 30 days.
-2. Create a lookalike of my existing audience "<seed audience name>", 
+2. Create a lookalike of my existing audience "<seed audience name>",
    for <country code>, at 1% similarity.
-Then list my custom audiences with their size and when they were last updated.
+Then list my custom audiences and tell me which ad sets are using each one.
 ```
 
 ## What comes back
@@ -30,11 +30,11 @@ lookalike         120250000000000022   seed "<seed audience name>" · CO · 1%
 
 ## How to read it
 
-A new rule-based audience starts empty and fills as people match the rule, so "size 0" right after creation is normal. A lookalike also needs time before it is usable.
+A rule-based audience starts empty and fills as people match the rule, so an audience with nothing in it right after creation is expected rather than broken.
 
-The seed decides everything about a lookalike. A seed of your highest-value customers produces a different audience than a seed of everyone who ever loaded a page, even though both are the same size on screen.
+The seed decides everything about a lookalike. A seed of your highest-value customers produces a different audience than a seed of everyone who ever loaded a page, even though both look the same size on screen.
 
-Two seed types are supported: a rule over website or pixel activity, and a customer file you supply. For a customer file, rows are hashed and normalized on the server before they reach Meta — you do not prepare the hashing yourself.
+Two seed types are supported: a rule over website or pixel activity, and a customer file you supply. Both work through this connector — if someone tells you the customer-file route is unavailable, check [what it cannot do](../06-reference/what-it-cannot-do.md), which lists it as supported.
 
 > [!IMPORTANT]
 > Uploading a customer list is a decision about other people's personal data, not a technical step. Use only contacts you are allowed to use for advertising, under whatever consent and privacy rules apply to you and your client, and get that confirmed by the person who owns the relationship before any file moves. If you are unsure, build the audience from website activity instead.
@@ -42,11 +42,11 @@ Two seed types are supported: a rule over website or pixel activity, and a custo
 ## The trap
 
 > [!WARNING]
-> **A lookalike will not be created without a location.** Name the country — or the list of countries — in the same sentence, or the request comes back with a missing-locations error. Worse: that same missing-locations error also appears when the location *was* supplied correctly, and the real cause is a seed audience below Meta's minimum of roughly 100 people. Check the seed's size before you go hunting for a typo in the country code.
+> **Interest targeting here is one OR-group and nothing else.** You can list interests and reach anyone matching any of them. You cannot narrow with AND, you cannot exclude an interest, and you cannot add behaviors — and language or locale targeting is not available at all. So an ad set you built in Ads Manager as "interested in running AND in nutrition, excluding existing customers, Spanish speakers only" cannot be rebuilt here. Do that narrowing with a custom audience and geo instead, or accept broader targeting than the brief describes.
 
 ## Go deeper
 
-- List my custom audiences with size, type and last update, newest first.
+- List my custom audiences with their type, newest first.
 - Which ad sets are currently using the audience `<audience name>`?
 - Add the contacts in this CSV to `<audience name>` and tell me how many rows were accepted.
 - Show me my pixels and the custom conversions built on them.
@@ -58,7 +58,7 @@ Audiences themselves are managed through the action catalog rather than the repo
 
 - [`facebook_ads_adset_id`](../06-reference/all-fields.md) · [`facebook_ads_adset_name`](../06-reference/all-fields.md)
 - [`facebook_ads_reach`](../06-reference/all-fields.md) · [`facebook_ads_frequency`](../06-reference/all-fields.md)
-- [`facebook_ads_adsettargeting_geo_location_countries`](../06-reference/all-fields.md)
+- [`facebook_ads_adsettargeting_geo_location_countries`](../06-reference/all-fields.md) · [`facebook_ads_adsettargeting_geo_location_cities`](../06-reference/all-fields.md)
 - [`facebook_ads_offsite_conversion_fb_pixel_purchase`](../06-reference/all-fields.md) · [`facebook_ads_offsite_conversion_fb_pixel_lead`](../06-reference/all-fields.md)
 
 ---

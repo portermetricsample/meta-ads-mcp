@@ -17,6 +17,9 @@ view content, search, add payment info, add to wishlist, and custom.
 Add a second column for the deduplicated version of each — people
 rather than events.
 
+Alongside that, show me landing page views and total spend for the
+same window, as a sanity check on the funnel.
+
 Then show me the attribution setting on the account, and split
 purchases by campaign so I can see which campaigns are reporting
 conversions at all.
@@ -43,6 +46,16 @@ custom conversions   <id> · <name> · <rule>
 | complete registration | 0 | 0 | — |
 | add payment info | 0 | 0 | — |
 
+**The sanity check**
+
+```
+landing_page_views   3,208
+spend                9,540.00
+```
+
+> [!NOTE]
+> `landing_page_views` has no `facebook_ads_` prefix. Almost every Meta field is namespaced — `facebook_ads_spend`, `facebook_ads_impressions` — but this one is a blend field shared across connectors and its name is bare. Ask for `facebook_ads_landing_page_view` and the query fails outright with an unknown-field error rather than returning nothing.
+
 **Attribution**
 
 ```
@@ -67,7 +80,19 @@ Finally, split purchases by campaign. If one campaign reports conversions and th
 ## The trap
 
 > [!WARNING]
-> There is a field that answers "how many conversions did I get" and it is the wrong one. `facebook_ads_conversions_all` totals every action the account recorded — page engagements and video views land in the same number as purchases. It always looks healthy, it always looks like the pixel is working, and it is the single easiest way to report a broken account as a good one. Audit with the named events (`facebook_ads_offsite_conversion_fb_pixel_purchase`, `_lead`, and the rest) and never put the all-actions total in front of a client.
+> **There is a field that answers "how many conversions did I get" and it is wrong by three orders of magnitude.** This is not theoretical. One campaign, one 30-day window, one row, run against a live account while writing this page:
+>
+> ```
+> facebook_ads_conversions_all                    251,980
+> facebook_ads_offsite_conversion_fb_pixel_lead       103
+> landing_page_views                                4,134
+> ```
+>
+> The account is not named and the figures are reproduced exactly as returned.
+>
+> Both of those first two lines are labelled conversions. Only the second one is. `facebook_ads_conversions_all` totals **every action the account recorded** — video views, page likes, comments, profile taps — in the same number as a lead or a purchase. Note that it is also far larger than landing page views, which is the giveaway: nobody converted more times than they arrived.
+>
+> It always looks healthy, it always looks like the pixel is working, and it is the single easiest way to report a broken account as a good one. Audit with the named events — `facebook_ads_offsite_conversion_fb_pixel_purchase`, `_lead` and the rest — and never put the all-actions total in front of a client.
 
 ## Go deeper
 
@@ -85,7 +110,8 @@ Finally, split purchases by campaign. If one campaign reports conversions and th
 - [`facebook_ads_unique_action_purchase`](../06-reference/all-fields.md) · [`facebook_ads_unique_action_lead`](../06-reference/all-fields.md)
 - [`facebook_ads_offline_conversion_purchase`](../06-reference/all-fields.md) · [`facebook_ads_offline_conversions_leads`](../06-reference/all-fields.md)
 - [`facebook_ads_onsite_conversion_messaging_conversation_started_7d`](../06-reference/all-fields.md)
-- [`facebook_ads_attribution_setting`](../06-reference/all-fields.md)
+- [`facebook_ads_attribution_setting`](../06-reference/all-fields.md) · [`facebook_ads_spend`](../06-reference/all-fields.md)
+- `landing_page_views` — a blend field, so **no `facebook_ads_` prefix**
 - Actions: `facebook_ads.pixel_list` · `facebook_ads.customconversion_list` — see [all-actions.md](../06-reference/all-actions.md)
 
 ---
