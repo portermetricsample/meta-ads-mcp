@@ -62,7 +62,6 @@ Publishing that list is deliberate. Finding out mid-build that something is miss
 ## FAQ
 
 ### Is there an MCP for Meta ads?
-Yes — this one, and Meta ships an official one of its own. Side-by-side, including where this one loses: [06-reference/vs-meta-official.md](06-reference/vs-meta-official.md).
 
 ### Does Meta have an official MCP?
 Yes, released April 2026. It is Meta-only and gated to accounts Meta has enabled. This one covers Meta plus 25 other connectors and is not subject to that rollout.
