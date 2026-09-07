@@ -16,7 +16,7 @@ Reads run through `query_data`. Everything else is in Porter's action catalog, r
 
 | Action | Notes |
 |---|---|
-| `facebook_ads.campaign_create` | PAUSED by default. **Pass `bid_strategy` explicitly** — see LIMITATIONS |
+| `facebook_ads.campaign_create` | PAUSED by default. **Pass `bid_strategy` explicitly** — see [what it cannot do](what-it-cannot-do.md) |
 | `facebook_ads.campaign_update` | Name, status, budget, bid strategy, CBO↔ABO |
 | `facebook_ads.campaign_delete` | Destructive; removes children |
 | `facebook_ads.adset_create` | Flat `targeting_*` params assembled into Meta's nested spec |

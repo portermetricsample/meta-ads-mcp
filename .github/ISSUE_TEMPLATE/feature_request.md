@@ -10,7 +10,7 @@ assignees: ''
 <!-- The marketing job, not the API call. -->
 
 **What is missing**
-<!-- Check docs/reference/what-it-cannot-do.md first — it may be a known limit. -->
+<!-- Check 06-reference/what-it-cannot-do.md first — it may be a known limit. -->
 
 **Is this a documentation gap or a connector gap?**
 <!-- Can the connector already do it and we just have not written it down? -->

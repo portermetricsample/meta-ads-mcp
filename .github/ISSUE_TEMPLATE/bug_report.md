@@ -7,7 +7,7 @@ assignees: ''
 ---
 
 **Which file**
-<!-- e.g. docs/reference/all-fields.md -->
+<!-- e.g. 06-reference/all-fields.md -->
 
 **What the docs say**
 

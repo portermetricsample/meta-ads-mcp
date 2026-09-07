@@ -33,7 +33,7 @@ The seed audience is likely below Meta's minimum size (~100 people). Grow the se
 A Google Drive or Dropbox **share** link returns HTML, not media. Use a direct-download URL, or pass the bytes as `image_base64` / `video_base64`.
 
 ## `Unknown field(s) absent from every loaded schema`
-Field names are namespaced. Use `list_fields(connector="facebook-ads")` — it is `facebook_ads_impressions`, not `impressions`.
+Field names are namespaced. Use `list_fields(connector="facebook-ads")` — it is `facebook_ads_impressions`, not `facebook_ads_impressions`.
 
 ## Query returns 0 rows but the account has spend
 Try the widest legal window before concluding the account is empty, and drop dimensions to test the aggregate. A `data_freshness` block with `row_count: 0` means *unknown*, not *zero*.

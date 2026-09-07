@@ -6,11 +6,11 @@ The most useful contributions are corrections.
 
 ## What helps most
 
-**A field that behaves differently than documented.** If `docs/reference/all-fields.md` describes a metric one way and Meta returns something else, that is the highest-value issue you can open. Include the exact question you asked and the response you got.
+**A field that behaves differently than documented.** If `06-reference/all-fields.md` describes a metric one way and Meta returns something else, that is the highest-value issue you can open. Include the exact question you asked and the response you got.
 
-**An error we have not documented.** `docs/reference/errors.md` lists real Meta error subcodes and their fixes. If you hit one that is not there, add it — the error text, what caused it, and what fixed it.
+**An error we have not documented.** `06-reference/errors.md` lists real Meta error subcodes and their fixes. If you hit one that is not there, add it — the error text, what caused it, and what fixed it.
 
-**A limitation we claim that is no longer true.** Platforms change. If `docs/reference/what-it-cannot-do.md` says something is impossible and you have done it, we want to know.
+**A limitation we claim that is no longer true.** Platforms change. If `06-reference/what-it-cannot-do.md` says something is impossible and you have done it, we want to know.
 
 **A prompt that does not work as written.** Every prompt in `docs/` is meant to work on first paste. If one fails, say which file and what came back.
 

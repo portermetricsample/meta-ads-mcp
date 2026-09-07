@@ -14,7 +14,7 @@ Verified against the live connector. We publish this because knowing what a tool
 | Custom attribution window (`attribution_spec`) | ❌ | Ad sets use the account default |
 | Catalog / Dynamic Product Ads / Advantage+ Shopping | ❌ | Ads Manager |
 | App-install optimization goal | ❌ | Choose another objective |
-| `spend_cap`, `target_roas` | ❌ | Use `bid_strategy: MINIMUM_ROAS` + `bid_value` |
+| `facebook_ads_spend_cap`, `target_roas` | ❌ | Use `bid_strategy: MINIMUM_ROAS` + `bid_value` |
 | Financial services special ad category | ❌ not in enum | Ads Manager |
 | Delete an uploaded image or video | ❌ | Ads Manager |
 
@@ -28,7 +28,7 @@ Placements · custom audiences (customer-file **and** website/pixel-rule) · loo
 
 **`facebook_ads_amount_spent` is an account-level lifetime value.** For period spend use **`facebook_ads_spend`**.
 
-**`conversions_all` counts every action**, including page engagements and video views — not business conversions. For those use the specific fields (`facebook_ads_purchase`, `facebook_ads_lead`).
+**`facebook_ads_conversions_all` counts every action**, including page engagements and video views — not business conversions. For those use the specific fields (`facebook_ads_purchase`, `facebook_ads_lead`).
 
 **Blended `conversions` does not cover Meta.** In a cross-platform query it returns 0 for Meta Ads. Use the Meta-native conversion fields.
 

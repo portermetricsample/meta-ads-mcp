@@ -45,4 +45,4 @@ How much did I spend on Meta ads last month, by campaign?
 
 **"No accounts found".** The authorization did not complete, or the Facebook user has no role on any ad account in Business Manager. A personal profile with no assigned ad account exposes none.
 
-**Accounts listed but queries return nothing.** Try a wider date range before concluding the account is empty — see [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+**Accounts listed but queries return nothing.** Try a wider date range before concluding the account is empty — see [common errors](../06-reference/errors.md).

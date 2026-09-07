@@ -1,123 +1,90 @@
 # Meta Ads MCP — Facebook & Instagram ads for Claude, ChatGPT, Cursor and n8n
 
-> **This is not a standalone MCP server.** It is the complete field, action and troubleshooting reference for the **Meta Ads connector inside the Porter Metrics MCP** — one hosted server, 30+ connectors. Install it once at [`mcp.portermetrics.com/mcp`](https://mcp.portermetrics.com/mcp); there is no package to clone from this repo.
+Ask your AI assistant a question in plain language and get real numbers out of your Meta ad account — or have it build, edit and pause campaigns without you opening Ads Manager. 500 metrics, 167 dimensions, full campaign create/edit/delete. OAuth login, no API keys, no Meta developer token, no server to run.
 
-> **Meta Ads (Facebook + Instagram) MCP server — read campaign performance and manage campaigns from any AI assistant. 500 metrics, 167 dimensions, full campaign CRUD. Hosted remote MCP, OAuth login, no API keys, no developer token, no self-hosting.**
+> [!IMPORTANT]
+> **This is not a standalone MCP server.** It is the field, action and troubleshooting reference for the **Meta Ads connector inside the Porter Metrics MCP** — one hosted server, 30+ connectors. You install it once, at:
+>
+> ```
+> https://mcp.portermetrics.com/mcp
+> ```
+>
+> There is nothing in this repo to clone, install or run.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![MCP Protocol](https://img.shields.io/badge/MCP-Protocol-blue)](https://modelcontextprotocol.io)
-[![Meta Ads](https://img.shields.io/badge/Meta%20Ads-Marketing%20API%20v25-0081FB?logo=meta&logoColor=white)](#available-fields)
+[![Meta Ads](https://img.shields.io/badge/Meta%20Ads-Marketing%20API%20v25-0081FB?logo=meta&logoColor=white)](06-reference/all-fields.md)
 [![Powered by Porter](https://img.shields.io/badge/Powered%20by-Porter%20Metrics-6C5CE7)](https://portermetrics.com)
-[![Verified](https://img.shields.io/badge/catalog%20verified-2026--09--07-brightgreen)](docs/FIELDS.md)
+[![Verified](https://img.shields.io/badge/catalog%20verified-2026--09--07-brightgreen)](06-reference/all-fields.md)
 
 ---
 
-## What is this?
+## Start here
 
-An MCP server that connects **Meta Ads — Facebook and Instagram** to Claude, ChatGPT, Cursor, Windsurf, n8n and any other MCP client. Ask questions in plain language and get real numbers from your ad account; create and edit campaigns without opening Ads Manager.
+Pick the job you actually have today. Every file inside is one job: the prompt to paste, the shape of what comes back, how to read it, and the one thing that quietly makes the answer wrong.
 
-It is **hosted and remote**. There is nothing to install, no Meta developer token to request, no app review, and no server to run.
+| Section | What it is for |
+|---|---|
+| **[01 · Reporting](01-reporting/)** | The work that runs on a schedule — last week's numbers by campaign, budget pacing, creative fatigue, alerts, and one question that spans Meta, Google and TikTok at once. |
+| **[02 · Auditing](02-auditing/)** | Something is wrong, or an account you did not build just landed on your desk — where the money goes, what is working, who converts, whether the pixel is really firing, why delivery stopped. |
+| **[03 · Research](03-research/)** | Reading ads you do not own. Any brand's live Meta ads by name, from the public Ad Library — no login, no partner access, nothing for them to approve. |
+| **[04 · Ad management](04-ad-management/)** | Changing things instead of reading them — launch a campaign, move budgets and bids, pause and restart, build audiences and lookalikes, upload creative. Writes go to your account, created paused. |
 
-## Why this exists
+## Connect it to your assistant
 
-Meta's Marketing API is powerful and unfriendly. Getting a single number out of it normally means an app, a system user, a token, and a week of reading docs. This removes all of that: you log in with OAuth once, and your assistant can read the account.
+Same URL for every client. You sign in with the Facebook account that already has a role on the ad account.
 
-It is also **not Meta-only**. The same Porter MCP covers Google Ads, GA4, TikTok, LinkedIn, Shopify, HubSpot and 25+ connectors — so "compare Meta and Google spend this month" is one question, not two exports and a spreadsheet.
+| Client | Setup |
+|---|---|
+| Claude Desktop | [05-connect/claude-desktop.md](05-connect/claude-desktop.md) |
+| Claude Code | [05-connect/claude-code.md](05-connect/claude-code.md) |
+| ChatGPT | [05-connect/chatgpt.md](05-connect/chatgpt.md) |
+| Cursor | [05-connect/cursor.md](05-connect/cursor.md) |
+| Windsurf | [05-connect/windsurf.md](05-connect/windsurf.md) |
+| n8n | [05-connect/n8n.md](05-connect/n8n.md) |
 
-## Works with
+Paste-ready config files live in [`configs/`](configs/). Full walkthrough: [05-connect/](05-connect/).
 
-| Client | Status | Guide |
-|---|---|---|
-| Claude Desktop | ✅ | [docs/SETUP_CLAUDE.md](docs/SETUP_CLAUDE.md) |
-| Claude Code | ✅ | [docs/SETUP_CLAUDE_CODE.md](docs/SETUP_CLAUDE_CODE.md) |
-| ChatGPT | ✅ | [docs/SETUP_CHATGPT.md](docs/SETUP_CHATGPT.md) |
-| Cursor | ✅ | [docs/SETUP_CURSOR.md](docs/SETUP_CURSOR.md) |
-| Windsurf | ✅ | [docs/SETUP_WINDSURF.md](docs/SETUP_WINDSURF.md) |
-| n8n | ✅ | [docs/SETUP_N8N.md](docs/SETUP_N8N.md) |
+## What it can read
 
-## Quick start
+**500 metrics and 167 dimensions** for Meta Ads alone — spend and delivery, four different click counts, roughly sixty cost variants, all ten standard pixel events each with a revenue twin, around eighty deduplicated `unique_*` fields, the full video funnel down to second-by-second retention, plus quality rankings, messaging, offline conversions and parsed UTMs.
 
-```json
-{
-  "mcpServers": {
-    "porter": { "url": "https://mcp.portermetrics.com/mcp" }
-  }
-}
-```
+The exact names, grouped by what they measure: [06-reference/all-fields.md](06-reference/all-fields.md).
+What the connector can *do* — read, create, update, delete, upload, research: [06-reference/all-actions.md](06-reference/all-actions.md).
 
-Then ask: **"List my Meta ad accounts."**
+It is also not Meta-only. The same server covers Google Ads, GA4, Search Console, TikTok, LinkedIn, Shopify, HubSpot and 25+ other connectors, so "compare Meta and Google spend this month" is one question rather than two exports and a spreadsheet.
 
-Full per-client instructions are in [`docs/`](docs/), paste-ready files in [`configs/`](configs/).
+## What it cannot do
 
-## What you can ask it
+**[06-reference/what-it-cannot-do.md](06-reference/what-it-cannot-do.md)** — the verified list, each item with the workaround.
 
-```
-How much did I spend on Meta ads last month, by campaign?
-Which placement had the cheapest cost per link click?
-Break my Meta spend down by age and gender.
-Which of my ads stopped delivering, and why?
-Compare Meta and Google Ads spend for the last 30 days.
-Create a paused Traffic campaign targeting Colombia, 25–54.
-Upload this image and build an ad from it.
-```
-
-More, with real outputs: [docs/EXAMPLES.md](docs/EXAMPLES.md)
-
-## Available fields
-
-**500 metrics and 167 dimensions** for Meta Ads alone — the full catalog is in [docs/FIELDS.md](docs/FIELDS.md), including:
-
-- Spend, impressions, reach, frequency
-- Four distinct click types — all clicks, unique, link clicks, outbound
-- ~60 cost variants: CPC, CPM, CPP, cost per link click, cost per result
-- All 10 standard pixel events **plus a revenue twin for each**
-- ~80 deduplicated `unique_*` variants
-- Video funnel: 3-second plays, ThruPlays, 25/50/75/95/100%, and 17 second-by-second retention fields
-- Offline conversions, messaging conversions, quality rankings
-
-## Competitor research — no account needed
-
-The same server reads **any brand's live Meta ads** from the public Ad Library by name, with no access to their account:
-
-```
-Show me every ad Nike is running on Meta right now, deduplicated.
-Audit my three biggest competitors' Meta creative and tell me what they all do that I don't.
-```
-
-Actions: `meta_ads_research.run_audit`, `meta_ads_research.publish_report`. There is a Google equivalent (`google_ads_research.*`) that reads the Ads Transparency Center.
-
-## Tools
-
-Campaign, ad set, ad and creative CRUD; audiences and lookalikes; asset upload; insights with breakdowns.
-Full list with parameters: [docs/TOOLS.md](docs/TOOLS.md)
-
-## Limitations
-
-We publish what it **cannot** do, verified against the live connector: [docs/LIMITATIONS.md](docs/LIMITATIONS.md)
-
-## Troubleshooting
-
-Real errors and their fixes, including Meta's less obvious subcodes: [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)
-
-## How this compares
-
-An independent, receipt-backed comparison against **Meta's own official Ads MCP** — 58 tests, including where this server loses: [docs/COMPARISON.md](docs/COMPARISON.md)
-
-## Other Porter MCP servers
-
-Google Ads · Google Analytics 4 · Google Search Console · TikTok Ads · LinkedIn Ads · Shopify · HubSpot · Klaviyo · Amazon Seller · and more — see [porter-mcp](https://github.com/portermetricsample/porter-mcp).
+Publishing that list is deliberate. Finding out mid-build that something is missing costs more than reading it up front, and a feature list that only says yes is not worth trusting.
 
 ## FAQ
 
-**Is there an MCP for Meta ads?** Yes — this one, and Meta ships an official one. [The comparison](docs/COMPARISON.md) covers both.
+### Is there an MCP for Meta ads?
+Yes — this one, and Meta ships an official one of its own. Side-by-side, including where this one loses: [06-reference/vs-meta-official.md](06-reference/vs-meta-official.md).
 
-**Does Meta have an official MCP?** Yes, released April 2026. It is Meta-only and gated to accounts Meta has enabled. This server covers Meta plus 25 other connectors and is not subject to that rollout.
+### Does Meta have an official MCP?
+Yes, released April 2026. It is Meta-only and gated to accounts Meta has enabled. This one covers Meta plus 25 other connectors and is not subject to that rollout.
 
-**Is there an MCP for Facebook?** Facebook and Instagram ads are the same Meta Ads account, so yes — this is it.
+### Is there an MCP for Facebook ads?
+Facebook and Instagram ads live in the same Meta ad account, so yes — this is it.
 
-**Do I need a Meta developer token?** No. OAuth login only.
+### Do I need a Meta developer token or an app review?
+No. You log in with OAuth once.
 
-**Does it work with ChatGPT?** Yes — [docs/SETUP_CHATGPT.md](docs/SETUP_CHATGPT.md).
+### Does it work with ChatGPT?
+Yes, on a paid plan with Developer mode on: [05-connect/chatgpt.md](05-connect/chatgpt.md).
+
+### Can it create and edit campaigns, or only read?
+Both. Campaigns, ad sets and ads are created paused, so nothing spends until you deliberately turn it on: [04-ad-management/](04-ad-management/).
+
+### Can I see a competitor's ads without access to their account?
+Yes, from Meta's public Ad Library — you get the ads, not their spend or results: [03-research/](03-research/).
+
+### Something came back as an error. Where do I look?
+Real Meta errors and subcodes with the fix: [06-reference/errors.md](06-reference/errors.md).
 
 ## License
 

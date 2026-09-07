@@ -2,9 +2,9 @@
 
 ## Something is not working
 
-1. **Check [errors](docs/reference/errors.md)** — real Meta error subcodes and their fixes.
-2. **Check [what it cannot do](docs/reference/what-it-cannot-do.md)** — the honest list of limits, verified against the live connector.
-3. **Check the setup guide for your client** in [`docs/connect/`](docs/connect/) — most connection problems are client-specific.
+1. **Check [errors](06-reference/errors.md)** — real Meta error subcodes and their fixes.
+2. **Check [what it cannot do](06-reference/what-it-cannot-do.md)** — the honest list of limits, verified against the live connector.
+3. **Check the setup guide for your client** in [`05-connect/`](05-connect/) — most connection problems are client-specific.
 
 ## Still stuck
 
