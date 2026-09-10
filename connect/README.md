@@ -22,6 +22,16 @@ You sign in with the Facebook account that has a role on the ad account. No API 
 > [!NOTE]
 > After connecting, ask **"List my Meta ad accounts"** first. If nothing comes back, the login did not finish or that Facebook user has no role on any ad account in Business Manager.
 
----
+## Videos & guides
 
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*
+| | |
+|---|---|
+| [![How to install the Meta Ads MCP in Claude](https://img.youtube.com/vi/m3ozKloLTko/hqdefault.jpg)](https://www.youtube.com/watch?v=m3ozKloLTko) | **[How to install the Meta Ads MCP in Claude](https://www.youtube.com/watch?v=m3ozKloLTko)** — Meta's own official MCP, step by step, and where the Porter Metrics MCP fits in when you need more than one ad platform in the same conversation. |
+| [![How to use the official Meta Ads MCP with ChatGPT](https://img.youtube.com/vi/c_daxGadUBM/hqdefault.jpg)](https://www.youtube.com/watch?v=c_daxGadUBM) | **[How to use the official Meta Ads MCP with ChatGPT](https://www.youtube.com/watch?v=c_daxGadUBM)** — same setup, ChatGPT's Developer Mode. |
+| [![How to connect Meta Ads to Claude — no code](https://img.youtube.com/vi/ooaKTMNictw/hqdefault.jpg)](https://www.youtube.com/watch?v=ooaKTMNictw) | **[How to connect Meta Ads (Facebook Ads) to Claude — no code](https://www.youtube.com/watch?v=ooaKTMNictw)** — the Porter Metrics connector itself, this repo's own subject. |
+| [![How to make Meta ads with AI](https://img.youtube.com/vi/OoOCFBbFbJQ/hqdefault.jpg)](https://www.youtube.com/watch?v=OoOCFBbFbJQ) | **[How to make Meta ads with AI](https://www.youtube.com/watch?v=OoOCFBbFbJQ)** — generating the creative itself with Claude, once the connector is live. |
+
+Written guides on portermetrics.com:
+
+- **[Meta Ads connector for Claude (MCP)](https://portermetrics.com/en/connectors/claude/meta-ads/)** — the product page: what it reads, what it can do.
+- **[Meta Ads MCP: 5 free ways to connect Meta Ads to Claude](https://portermetrics.com/en/tutorial/claude/chat-meta-ads/)** — the full setup walkthrough this section is based on.

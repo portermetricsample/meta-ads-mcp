@@ -17,6 +17,10 @@ Ask your AI assistant a question in plain language and get real numbers out of y
 [![Powered by Porter](https://img.shields.io/badge/Powered%20by-Porter%20Metrics-6C5CE7)](https://portermetrics.com)
 [![Verified](https://img.shields.io/badge/catalog%20verified-2026--09--10-brightgreen)](reference/all-fields.md)
 
+[![How to install the Meta Ads MCP in Claude](https://img.youtube.com/vi/m3ozKloLTko/hqdefault.jpg)](https://www.youtube.com/watch?v=m3ozKloLTko)
+
+*Watch: connecting Meta Ads to Claude, and where the Porter Metrics MCP fits in when you need more than one ad platform in the same conversation. More videos and setup guides: [connect/](connect/#videos--guides).*
+
 ---
 
 ## Connect it to your assistant
