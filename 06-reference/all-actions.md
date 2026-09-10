@@ -7,7 +7,7 @@ Reads run through `query_data`. Everything else is in Porter's action catalog, r
 | Tool | What it does |
 |---|---|
 | `list_accounts` | Your Meta ad accounts, searchable by name or id |
-| `list_fields` | The 500 metrics and 167 dimensions |
+| `list_fields` | The 1,205 metrics and 167 dimensions |
 | `query_data` | Any metric × dimension × date range, **across several accounts and connectors in one call** |
 | `create_blend` / `query_blend` | Save a recurring analysis |
 | `create_report` | Hosted dashboard |

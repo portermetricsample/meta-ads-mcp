@@ -1,6 +1,6 @@
 # Meta Ads MCP — Facebook & Instagram ads for Claude, ChatGPT, Cursor and n8n
 
-Ask your AI assistant a question in plain language and get real numbers out of your Meta ad account — or have it build, edit and pause campaigns without you opening Ads Manager. 500 metrics, 167 dimensions, full campaign create/edit/delete. OAuth login, no API keys, no Meta developer token, no server to run.
+Ask your AI assistant a question in plain language and get real numbers out of your Meta ad account — or have it build, edit and pause campaigns without you opening Ads Manager. 1,205 metrics, 167 dimensions, full campaign create/edit/delete. OAuth login, no API keys, no Meta developer token, no server to run.
 
 > [!IMPORTANT]
 > **This is not a standalone MCP server.** It is the field, action and troubleshooting reference for the **Meta Ads connector inside the Porter Metrics MCP** — one hosted server, 30+ connectors. You install it once, at:
@@ -47,7 +47,7 @@ Same URL for every client. You sign in with the Facebook account that already ha
 
 ## What it can read
 
-**500 metrics and 167 dimensions** for Meta Ads alone — spend and delivery, four different click counts, roughly sixty cost variants, all ten standard pixel events each with a revenue twin, around eighty deduplicated `unique_*` fields, the full video funnel down to second-by-second retention, plus quality rankings, messaging, offline conversions and parsed UTMs.
+**1,205 metrics and 167 dimensions** for Meta Ads alone — spend and delivery, four different click counts, over 125 cost-per variants, all ten standard pixel events each with a revenue twin, 180 deduplicated `unique_*` fields, the full video funnel down to second-by-second retention, plus quality rankings, messaging, offline conversions and parsed UTMs.
 
 The exact names, grouped by what they measure: [06-reference/all-fields.md](06-reference/all-fields.md).
 What the connector can *do* — read, create, update, delete, upload, research: [06-reference/all-actions.md](06-reference/all-actions.md).

@@ -1,6 +1,6 @@
 # Available fields — Meta Ads
 
-**500 metrics and 167 dimensions.** Field names are namespaced: `facebook_ads_<name>`.
+**1,205 metrics and 167 dimensions.** Field names are namespaced: `facebook_ads_<name>`.
 
 > [!WARNING]
 > **A few fields break that rule and are written bare.** These are Porter *blend* fields, shared across connectors. `landing_page_views` is one — `facebook_ads_landing_page_view` is rejected outright. When a field name fails, read the error: it names the form that works. Get the live list with `list_fields(connector="facebook-ads")`.
@@ -26,7 +26,7 @@
 ## Rates
 `ctr` · `unique_ctr` · `inline_link_click_ctr` · `unique_inline_link_click_ctr` · `outbound_CTR` · `unique_outbound_CTR`
 
-## Cost — ~60 variants
+## Cost — 125+ variants
 
 <details><summary>Show the common cost fields</summary>
 
