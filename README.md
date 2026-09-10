@@ -2,6 +2,20 @@
 
 Ask your AI assistant a question in plain language and get real numbers out of your Meta ad account — or have it build, edit and pause campaigns without you opening Ads Manager. 1,205 metrics, 167 dimensions, full campaign create/edit/delete. OAuth login, no API keys, no Meta developer token, no server to run.
 
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=m3ozKloLTko">
+    <img src="https://img.youtube.com/vi/m3ozKloLTko/maxresdefault.jpg" alt="Watch: connecting Meta Ads to Claude, and where Porter fits in" width="720">
+  </a>
+  <br>
+  <sub><b>▶ Watch:</b> connecting Meta Ads to Claude, and where the Porter Metrics MCP fits in when you need more than one ad platform in the same conversation. More videos and setup guides in <a href="connect/#videos--guides">connect/</a>.</sub>
+</p>
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![MCP Protocol](https://img.shields.io/badge/MCP-Protocol-blue)](https://modelcontextprotocol.io)
+[![Meta Ads](https://img.shields.io/badge/Meta%20Ads-Marketing%20API%20v25-0081FB?logo=meta&logoColor=white)](reference/all-fields.md)
+[![Powered by Porter](https://img.shields.io/badge/Powered%20by-Porter%20Metrics-6C5CE7)](https://portermetrics.com)
+[![Verified](https://img.shields.io/badge/catalog%20verified-2026--09--10-brightgreen)](reference/all-fields.md)
+
 > [!IMPORTANT]
 > **This is not a standalone MCP server.** It is the field, action and troubleshooting reference for the **Meta Ads connector inside the Porter Metrics MCP** — one hosted server, 30+ connectors. You install it once, at:
 >
@@ -10,16 +24,6 @@ Ask your AI assistant a question in plain language and get real numbers out of y
 > ```
 >
 > There is nothing in this repo to clone, install or run.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![MCP Protocol](https://img.shields.io/badge/MCP-Protocol-blue)](https://modelcontextprotocol.io)
-[![Meta Ads](https://img.shields.io/badge/Meta%20Ads-Marketing%20API%20v25-0081FB?logo=meta&logoColor=white)](reference/all-fields.md)
-[![Powered by Porter](https://img.shields.io/badge/Powered%20by-Porter%20Metrics-6C5CE7)](https://portermetrics.com)
-[![Verified](https://img.shields.io/badge/catalog%20verified-2026--09--10-brightgreen)](reference/all-fields.md)
-
-[![How to install the Meta Ads MCP in Claude](https://img.youtube.com/vi/m3ozKloLTko/hqdefault.jpg)](https://www.youtube.com/watch?v=m3ozKloLTko)
-
-*Watch: connecting Meta Ads to Claude, and where the Porter Metrics MCP fits in when you need more than one ad platform in the same conversation. More videos and setup guides: [connect/](connect/#videos--guides).*
 
 ---
 
