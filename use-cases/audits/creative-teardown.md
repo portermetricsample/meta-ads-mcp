@@ -97,7 +97,3 @@ Only then read the creative table. Once you know whether you have a hook problem
 - [`facebook_ads_image_asset_name`](../../reference/all-fields.md) · [`facebook_ads_image_asset_url`](../../reference/all-fields.md) · [`facebook_ads_video_asset_thumbnail_url`](../../reference/all-fields.md) · [`facebook_ads_ad_format_asset`](../../reference/all-fields.md)
 - [`facebook_ads_ad_mobile_feed_preview_url`](../../reference/all-fields.md) · [`facebook_ads_ad_instagram_preview_url`](../../reference/all-fields.md) · [`facebook_ads_ad_instagram_story_preview_url`](../../reference/all-fields.md)
 - [`facebook_ads_quality_ranking`](../../reference/all-fields.md) · [`facebook_ads_engagement_rate_ranking`](../../reference/all-fields.md) · [`facebook_ads_conversion_rate_ranking`](../../reference/all-fields.md)
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

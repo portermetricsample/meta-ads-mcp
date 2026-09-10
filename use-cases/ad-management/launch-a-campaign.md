@@ -150,7 +150,3 @@ Reading and writing use different names for the same thing. The `targeting_*` na
 > **You can read how the geo targeting works, but not where it points.** `facebook_ads_adsettargeting_geo_location_type` correctly returns the widened list — `home, recent` — so you can see Meta added visitors and recent travellers to your one country. But `facebook_ads_adsettargeting_geo_location_countries` comes back **empty** on ad sets that plainly have country targeting. Age fields populate fine, so it is that one field.
 >
 > An audit asking "which countries does this ad set target?" gets a blank and may conclude there is no geo targeting at all. To see the countries, read the ad set back through Meta rather than through reporting.
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

@@ -67,7 +67,3 @@ The day-by-day view also shows you *when* it drifted. A flat line that suddenly 
 - `facebook_ads_campaign_name`
 
 Budget fields exist and are listed in the reference, but read the warning above before using them for pacing.
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

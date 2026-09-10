@@ -23,7 +23,3 @@ Everything here runs on Meta's **public Ad Library**. You are not connecting to 
 **Skill:** [skills/meta-competitor-teardown/SKILL.md](skills/meta-competitor-teardown/SKILL.md) — loads the cost-per-depth and no-metrics traps automatically.
 
 Actions behind this section: `meta_ads_research.run_audit`, `meta_ads_research.view_creative` and `meta_ads_research.publish_report` — see [../../reference/all-actions.md](../../reference/all-actions.md).
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

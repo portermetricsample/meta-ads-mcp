@@ -75,7 +75,3 @@ Plus the discards: shapes used by exactly one brand, kept in a separate list.
 ## Fields this uses
 
 None. A swipe-file sweep is built entirely from Meta's public Ad Library, so it touches **no field in [../../reference/all-fields.md](../../reference/all-fields.md)** — nothing here requires an account, a permission or a token. The research variables it does return are `variants_total`, `days_active` and `any_active`; there are no performance metrics of any kind. It runs `meta_ads_research.run_audit` once per brand, `meta_ads_research.view_creative` on anything you want to look at, and `meta_ads_research.publish_report` for the shareable version: [../../reference/all-actions.md](../../reference/all-actions.md).
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

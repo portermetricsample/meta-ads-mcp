@@ -77,7 +77,3 @@ Thresholds are yours. Write the percentages into the prompt; there is no default
 - [`facebook_ads_campaign_name`](../../reference/all-fields.md) · [`facebook_ads_ad_name`](../../reference/all-fields.md) · [`facebook_ads_date`](../../reference/all-fields.md)
 
 `facebook_ads_conversions_all` exists and is listed in the reference. Read the trap above before you point an alert at it.
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

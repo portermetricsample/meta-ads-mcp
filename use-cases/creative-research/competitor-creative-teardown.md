@@ -84,7 +84,3 @@ Angle group                       Creatives   Formats
 ## Fields this uses
 
 None. The teardown reads Meta's public Ad Library, so **no field in [../../reference/all-fields.md](../../reference/all-fields.md) is involved** — those describe an ad account you are connected to, and here you are connected to nothing. What the audit returns instead are research variables: `variants_total`, `days_active`, `any_active` and `platforms`, the last of which is eligibility only. The actions are `meta_ads_research.run_audit`, `meta_ads_research.view_creative` and `meta_ads_research.publish_report`: [../../reference/all-actions.md](../../reference/all-actions.md).
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

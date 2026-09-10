@@ -118,7 +118,3 @@ Country matters most when one market is subsidising another inside a single ad s
 - [`facebook_ads_spend`](../../reference/all-fields.md) · [`facebook_ads_impressions`](../../reference/all-fields.md)
 - [`facebook_ads_inline_link_clicks`](../../reference/all-fields.md) · [`facebook_ads_inline_link_click_ctr`](../../reference/all-fields.md) · [`facebook_ads_cost_per_inline_link_click`](../../reference/all-fields.md)
 - [`facebook_ads_unique_inline_link_clicks`](../../reference/all-fields.md) · [`facebook_ads_unique_action_purchase`](../../reference/all-fields.md)
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

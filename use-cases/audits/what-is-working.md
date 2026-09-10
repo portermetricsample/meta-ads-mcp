@@ -69,7 +69,3 @@ Before you move money onto a winner, read [budget pacing](../reporting/budget-pa
 - [`facebook_ads_offsite_conversion_fb_pixel_lead`](../../reference/all-fields.md) · [`facebook_ads_cost_per_lead`](../../reference/all-fields.md)
 - [`facebook_ads_purchase_roas_purchase`](../../reference/all-fields.md) · [`facebook_ads_website_purchase_roas`](../../reference/all-fields.md)
 - [`facebook_ads_campaign_name`](../../reference/all-fields.md) · [`facebook_ads_adset_name`](../../reference/all-fields.md) · [`facebook_ads_objective`](../../reference/all-fields.md) · [`facebook_ads_status`](../../reference/all-fields.md)
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

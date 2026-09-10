@@ -24,7 +24,3 @@ Each is explained in full on one page. Read that page before you send anything t
 | The budget fields cannot answer "am I pacing" — pace from spend by day instead | [budget-pacing.md](budget-pacing.md) |
 
 Cost fields are the reassuring exception: they match spend ÷ actions exactly, with no rounding drift.
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

@@ -65,7 +65,3 @@ Bids are a separate control from budget. If a campaign runs a bid-cap strategy, 
 - [`facebook_ads_account_currency`](../../reference/all-fields.md) — every amount is in this currency, so confirm it before typing a number copied from another account's plan
 - [`facebook_ads_balance`](../../reference/all-fields.md)
 - [`facebook_ads_spend`](../../reference/all-fields.md) — period spend, and the only honest input to a pacing answer
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

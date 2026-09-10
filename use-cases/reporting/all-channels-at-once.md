@@ -69,7 +69,3 @@ Meta's cost columns are precise pass-throughs and come back with six decimal pla
 - [`facebook_ads_account_currency`](../../reference/all-fields.md) · [`facebook_ads_account_name`](../../reference/all-fields.md)
 - [`facebook_ads_offsite_conversion_fb_pixel_purchase`](../../reference/all-fields.md) — Meta conversions, named explicitly
 - `landing_page_views` — cross-platform, **no connector prefix**
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

@@ -76,7 +76,3 @@ The three quality rankings Meta reports on an ad are a useful second opinion whe
 - [`facebook_ads_cost_per_inline_link_click`](../../reference/all-fields.md)
 - [`facebook_ads_quality_ranking`](../../reference/all-fields.md) · [`facebook_ads_engagement_rate_ranking`](../../reference/all-fields.md) · [`facebook_ads_conversion_rate_ranking`](../../reference/all-fields.md)
 - [`facebook_ads_ad_name`](../../reference/all-fields.md) · [`facebook_ads_year_week`](../../reference/all-fields.md) — not `facebook_ads_week`
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

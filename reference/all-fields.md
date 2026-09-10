@@ -145,4 +145,4 @@ Every action above has a `unique_action_*` twin — `unique_action_purchase`, `u
 
 ---
 
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. Catalog verified against the live Porter MCP on 2026-09-07.*
+*Catalog verified against the live Porter MCP on 2026-09-07.*

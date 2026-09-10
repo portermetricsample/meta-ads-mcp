@@ -77,7 +77,3 @@ The 40 → 8 collapse and the 38-ad creative are both real, from a verified run.
 ## Fields this uses
 
 None. This reads Meta's public Ad Library, so it uses **no field from [../../reference/all-fields.md](../../reference/all-fields.md)** — those are account fields and start applying only once an account is connected. What the audit returns instead are research variables: `variants_total`, `days_active` and `any_active`, plus `metrics_available`, which is always `false`. The actions are `meta_ads_research.run_audit`, `meta_ads_research.view_creative` and `meta_ads_research.publish_report`, listed in [../../reference/all-actions.md](../../reference/all-actions.md).
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

@@ -77,7 +77,3 @@ Reach counts people, not events, so it deduplicates. Ask for it over the exact p
 - [`facebook_ads_campaign_name`](../../reference/all-fields.md) · [`facebook_ads_year_week`](../../reference/all-fields.md) · [`facebook_ads_month`](../../reference/all-fields.md)
 
 Ask for `facebook_ads_year_week` rather than `facebook_ads_week` — [creative fatigue](creative-fatigue.md) explains why the short one breaks.
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

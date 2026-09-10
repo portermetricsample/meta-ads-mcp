@@ -14,7 +14,3 @@ Each folder carries its own `skills/` subfolder — ready-made instructions your
 ## How to use a skill
 
 A skill is a folder of instructions your assistant loads before it starts a job, so the job is done the same way every time — a short description of when to use it, then the steps, in one `SKILL.md` file. Copy the folder into your assistant's skills directory (in Claude Code, `~/.claude/skills/`; other clients have their own) and it loads automatically when the job matches the description. If your assistant has no skills directory, paste the contents of `SKILL.md` into your prompt before you ask your question instead — same effect, you're doing the loading by hand.
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

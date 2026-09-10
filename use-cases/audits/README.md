@@ -17,7 +17,3 @@ Two things bite in almost every audit, so they are stated once and linked from e
 
 - **The number labelled "conversions" is not conversions.** [conversion-tracking-audit.md](conversion-tracking-audit.md) has the proven side-by-side.
 - **The budget fields cannot tell you how much is left.** [budget pacing](../reporting/budget-pacing.md) explains what they actually report.
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

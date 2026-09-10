@@ -86,7 +86,3 @@ For "how is this account pacing" or "how much budget is left", do not read the b
 - [`facebook_ads_account_name`](../../reference/all-fields.md) · [`facebook_ads_account_currency`](../../reference/all-fields.md) · [`facebook_ads_account_status`](../../reference/all-fields.md)
 
 Budget fields exist and are listed in the reference, but this audit does not use them. Read [budget pacing](../reporting/budget-pacing.md) before you do.
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

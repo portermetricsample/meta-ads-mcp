@@ -41,4 +41,4 @@ Placements · custom audiences (customer-file **and** website/pixel-rule) · loo
 
 ---
 
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. Catalog verified against the live Porter MCP on 2026-09-07.*
+*Catalog verified against the live Porter MCP on 2026-09-07.*

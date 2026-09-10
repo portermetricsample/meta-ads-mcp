@@ -36,7 +36,3 @@ You are about to let an assistant change a live account, so here is the honest s
 Separately, the connector's **limits** — the bid strategy default, the Advantage+ Audience conflict, the single OR-group of interests, no post boosting, no asset deletion, no dayparting — were verified against the live connector rather than by running a write. They all trace to [what it cannot do](../../reference/what-it-cannot-do.md).
 
 Treat the "no" rows as a reason to read every result back before you activate anything, rather than a reason to avoid the section.
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

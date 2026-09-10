@@ -60,7 +60,3 @@ If you pass a URL it has to be one that returns the file itself. A share link fr
 - [`facebook_ads_ad_mobile_feed_preview_url`](../../reference/all-fields.md) · [`facebook_ads_ad_instagram_preview_url`](../../reference/all-fields.md)
 
 An ad must be built from uploaded assets. Promoting a post that already exists on the page is not available here — see [what it cannot do](../../reference/what-it-cannot-do.md).
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

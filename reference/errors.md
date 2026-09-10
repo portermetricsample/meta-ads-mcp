@@ -41,4 +41,4 @@ Try the widest legal window before concluding the account is empty, and drop dim
 
 ---
 
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. Catalog verified against the live Porter MCP on 2026-09-07.*
+*Catalog verified against the live Porter MCP on 2026-09-07.*

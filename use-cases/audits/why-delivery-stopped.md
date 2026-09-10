@@ -99,7 +99,3 @@ Be straight with the client about this rather than guessing.
 - [`facebook_ads_bidamount`](../../reference/all-fields.md) · [`facebook_ads_spend_cap`](../../reference/all-fields.md) · [`facebook_ads_balance`](../../reference/all-fields.md) · [`facebook_ads_account_status`](../../reference/all-fields.md) · [`facebook_ads_account_currency`](../../reference/all-fields.md)
 
 The budget fields above are read here only to see **which level the budget sits on**. Do not read exhaustion or pacing from them — see the trap.
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

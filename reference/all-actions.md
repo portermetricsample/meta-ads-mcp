@@ -69,8 +69,3 @@ These read public data, so they work on brands you have no relationship with.
 ---
 
 Porter's catalog runs to **750+ actions across 25+ connectors**. Search it with `list_actions(task="…")` before assuming something is missing.
-
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

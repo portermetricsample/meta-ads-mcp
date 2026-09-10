@@ -67,7 +67,3 @@ The listing actions — `facebook_ads.campaign_list`, `adset_list`, `ad_list` �
 - [`facebook_ads_spend`](../../reference/all-fields.md) — period spend, the honest check on whether something actually stopped
 
 Budget fields look like a shortcut for "what is still running" and are not one — see [change budgets and bids](edit-budgets-and-bids.md).
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*

@@ -113,7 +113,3 @@ Finally, split purchases by campaign. If one campaign reports conversions and th
 - [`facebook_ads_attribution_setting`](../../reference/all-fields.md) · [`facebook_ads_spend`](../../reference/all-fields.md)
 - `landing_page_views` — a blend field, so **no `facebook_ads_` prefix**
 - Actions: `facebook_ads.pixel_list` · `facebook_ads.customconversion_list` — see [all-actions.md](../../reference/all-actions.md)
-
----
-
-*Not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.*
