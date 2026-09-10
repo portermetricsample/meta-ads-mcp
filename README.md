@@ -13,23 +13,11 @@ Ask your AI assistant a question in plain language and get real numbers out of y
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![MCP Protocol](https://img.shields.io/badge/MCP-Protocol-blue)](https://modelcontextprotocol.io)
-[![Meta Ads](https://img.shields.io/badge/Meta%20Ads-Marketing%20API%20v25-0081FB?logo=meta&logoColor=white)](06-reference/all-fields.md)
+[![Meta Ads](https://img.shields.io/badge/Meta%20Ads-Marketing%20API%20v25-0081FB?logo=meta&logoColor=white)](reference/all-fields.md)
 [![Powered by Porter](https://img.shields.io/badge/Powered%20by-Porter%20Metrics-6C5CE7)](https://portermetrics.com)
-[![Verified](https://img.shields.io/badge/catalog%20verified-2026--09--07-brightgreen)](06-reference/all-fields.md)
+[![Verified](https://img.shields.io/badge/catalog%20verified-2026--09--10-brightgreen)](reference/all-fields.md)
 
 ---
-
-## Start here
-
-Pick the job you actually have today. Every file inside is one job: the prompt to paste, the shape of what comes back, how to read it, and the one thing that quietly makes the answer wrong.
-
-| Section | What it is for |
-|---|---|
-| **[01 · Reporting](01-reporting/)** | The work that runs on a schedule — last week's numbers by campaign, budget pacing, creative fatigue, alerts, and one question that spans Meta, Google and TikTok at once. |
-| **[02 · Auditing](02-auditing/)** | Something is wrong, or an account you did not build just landed on your desk — where the money goes, what is working, who converts, whether the pixel is really firing, why delivery stopped. |
-| **[03 · Research](03-research/)** | Reading ads you do not own. Any brand's live Meta ads by name, from the public Ad Library — no login, no partner access, nothing for them to approve. |
-| **[04 · Ad management](04-ad-management/)** | Changing things instead of reading them — launch a campaign, move budgets and bids, pause and restart, build audiences and lookalikes, upload creative. Writes go to your account, created paused. |
-| **[Skills](skills/)** | Ready-made instructions your assistant loads before it starts, so the traps on these pages are avoided by default rather than remembered — launching a campaign, the weekly report, the conversion audit, the competitor teardown. |
 
 ## Connect it to your assistant
 
@@ -37,32 +25,44 @@ Same URL for every client. You sign in with the Facebook account that already ha
 
 | Client | Setup |
 |---|---|
-| Claude Desktop | [05-connect/claude-desktop.md](05-connect/claude-desktop.md) |
-| Claude Code | [05-connect/claude-code.md](05-connect/claude-code.md) |
-| ChatGPT | [05-connect/chatgpt.md](05-connect/chatgpt.md) |
-| Cursor | [05-connect/cursor.md](05-connect/cursor.md) |
-| Windsurf | [05-connect/windsurf.md](05-connect/windsurf.md) |
-| n8n | [05-connect/n8n.md](05-connect/n8n.md) |
+| Claude Desktop | [connect/claude-desktop.md](connect/claude-desktop.md) |
+| Claude Code | [connect/claude-code.md](connect/claude-code.md) |
+| ChatGPT | [connect/chatgpt.md](connect/chatgpt.md) |
+| Cursor | [connect/cursor.md](connect/cursor.md) |
+| Windsurf | [connect/windsurf.md](connect/windsurf.md) |
+| n8n | [connect/n8n.md](connect/n8n.md) |
+
+## Use cases
+
+Pick the job you actually have today. Every file inside is one job: the prompt to paste, the shape of what comes back, how to read it, and the one thing that quietly makes the answer wrong. Each use case carries its own `skills/` folder — ready-made instructions your assistant loads before it starts, so the traps on these pages are avoided by default rather than remembered. [How to use a skill →](use-cases/README.md#how-to-use-a-skill)
+
+| Use case | What it is for |
+|---|---|
+| **[Ad management](use-cases/ad-management/)** | Changing things instead of reading them — launch a campaign, move budgets and bids, pause and restart, build audiences and lookalikes, upload creative. Writes go to your account, created paused. |
+| **[Reporting](use-cases/reporting/)** | The work that runs on a schedule — last week's numbers by campaign, budget pacing, creative fatigue, alerts, and one question that spans Meta, Google and TikTok at once. |
+| **[Creative research](use-cases/creative-research/)** | Reading ads you do not own. Any brand's live Meta ads by name, from the public Ad Library — no login, no partner access, nothing for them to approve. |
+| **[Audits](use-cases/audits/)** | Something is wrong, or an account you did not build just landed on your desk — where the money goes, what is working, who converts, whether the pixel is really firing, why delivery stopped. |
 
 
 ## What it can read
 
 **1,205 metrics and 167 dimensions** for Meta Ads alone — spend and delivery, four different click counts, over 125 cost-per variants, all ten standard pixel events each with a revenue twin, 180 deduplicated `unique_*` fields, the full video funnel down to second-by-second retention, plus quality rankings, messaging, offline conversions and parsed UTMs.
 
-The exact names, grouped by what they measure: [06-reference/all-fields.md](06-reference/all-fields.md).
-What the connector can *do* — read, create, update, delete, upload, research: [06-reference/all-actions.md](06-reference/all-actions.md).
+The exact names, grouped by what they measure: [reference/all-fields.md](reference/all-fields.md).
+What the connector can *do* — read, create, update, delete, upload, research: [reference/all-actions.md](reference/all-actions.md).
 
 It is also not Meta-only. The same server covers Google Ads, GA4, Search Console, TikTok, LinkedIn, Shopify, HubSpot and 25+ other connectors, so "compare Meta and Google spend this month" is one question rather than two exports and a spreadsheet.
 
 ## What it cannot do
 
-**[06-reference/what-it-cannot-do.md](06-reference/what-it-cannot-do.md)** — the verified list, each item with the workaround.
+**[reference/what-it-cannot-do.md](reference/what-it-cannot-do.md)** — the verified list, each item with the workaround.
 
 Publishing that list is deliberate. Finding out mid-build that something is missing costs more than reading it up front, and a feature list that only says yes is not worth trusting.
 
 ## FAQ
 
 ### Is there an MCP for Meta ads?
+Yes — this is it: the Meta Ads connector inside the Porter Metrics MCP, one hosted server covering Meta plus 25+ other platforms.
 
 ### Does Meta have an official MCP?
 Yes, released April 2026. It is Meta-only and gated to accounts Meta has enabled. This one covers Meta plus 25 other connectors and is not subject to that rollout.
@@ -74,16 +74,16 @@ Facebook and Instagram ads live in the same Meta ad account, so yes — this is 
 No. You log in with OAuth once.
 
 ### Does it work with ChatGPT?
-Yes, on a paid plan with Developer mode on: [05-connect/chatgpt.md](05-connect/chatgpt.md).
+Yes, on a paid plan with Developer mode on: [connect/chatgpt.md](connect/chatgpt.md).
 
 ### Can it create and edit campaigns, or only read?
-Both. Campaigns, ad sets and ads are created paused, so nothing spends until you deliberately turn it on: [04-ad-management/](04-ad-management/).
+Both. Campaigns, ad sets and ads are created paused, so nothing spends until you deliberately turn it on: [use-cases/ad-management/](use-cases/ad-management/).
 
 ### Can I see a competitor's ads without access to their account?
-Yes, from Meta's public Ad Library — you get the ads, not their spend or results: [03-research/](03-research/).
+Yes, from Meta's public Ad Library — you get the ads, not their spend or results: [use-cases/creative-research/](use-cases/creative-research/).
 
 ### Something came back as an error. Where do I look?
-Real Meta errors and subcodes with the fix: [06-reference/errors.md](06-reference/errors.md).
+Real Meta errors and subcodes with the fix: [reference/errors.md](reference/errors.md).
 
 ## Found something wrong?
 
